@@ -1,4 +1,4 @@
-import { watchFile, unwatchFile } from 'fs' 
+ noimport { watchFile, unwatchFile } from 'fs' 
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
@@ -13,7 +13,7 @@ import { en, es, id, ar, pt } from './lib/idiomas/total-idiomas.js'
 // EN ➜ Add the Bot number as priority first
 // EN ➜ If you want to receive reports you must use the three parameters (Number, name and true)
 global.owner = [
-['573178206163', '𝙋𝙊𝙇𝙑𝙊𝙍𝘼 𝘽𝙊𝙏 ✅', true],
+['593958918542', '𝙋𝙊𝙇𝙑𝙊𝙍𝘼 𝘽𝙊𝙏 ✅', true],
 ]
 
 global.mods = [] 
@@ -87,8 +87,8 @@ global.author = '𝘗𝘰𝘭𝘷𝘰𝘳𝘢𝘉𝘰𝘵'
 // ES ➜ Está parte es para mostrar el contacto de alguien al usar #contacto
 // EN ➜ This part is to display someone's contact using #contact
 global.official = [ 
-['573178206163', '𝑨𝑫𝑴𝑰𝑵 𝘽𝙊𝙏 ✅', 1], 
-['5212221838954', '𝑨𝑫𝑴𝑰𝑵 𝑩𝑶𝑻 ✅', 1]
+['593958918542', '𝑨𝑫𝑴𝑰𝑵 𝘽𝙊𝙏 ✅', 1], 
+['593958918542', '𝑨𝑫𝑴𝑰𝑵 𝑩𝑶𝑻 ✅', 1]
 ] 
 
 global.mail = '' //agrega tú correo
