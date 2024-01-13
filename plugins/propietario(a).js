@@ -37,7 +37,7 @@ try {
 let d = new Date
 let date = d.toLocaleDateString('fr', { day: 'numeric', month: 'long', year: 'numeric' })
 let database = await fs.readFileSync(`./database.json`)
-let creds = await fs.readFileSync(`./PolvoraBotSession/creds.json`)
+let creds = await fs.readFileSync(`./GataBotSession/creds.json`)
 await conn.reply(m.sender, lenguajeGB.smsResP2(date), fkontak)
 await conn.sendMessage(m.sender, {document: database, mimetype: 'application/json', fileName: `database.json`}, { quoted: m })
 await conn.sendMessage(m.sender, {document: creds, mimetype: 'application/json', fileName: `creds.json`}, { quoted: m })
@@ -139,7 +139,7 @@ if (global.conn.user.jid == conn.user.jid) {
 let stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''))
 await conn.reply(m.chat, stdout.toString(), m)}
 } catch {
-var update = execSync('git remote set-url origin https://github.com/ELITEBOT15/clonado3' + md + '.git && git pull')
+var update = execSync('git remote set-url origin' + md + '.git && git pull')
 await m.reply(update.toString())
 }        
 break
