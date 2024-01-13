@@ -101,8 +101,8 @@ global.ig = ''
 global.md = ''
 global.fb = ''
 
-global.nna = '' //CANAL UPDATE
-global.nn2 = '' //Canal GataBot
+global.nna = '' //CANAL 
+global.nn2 = '' //Canal
 global.nna2 = '' //Help
 global.nn = '' //Grupo 1
 global.nnn = '' //Grupo 2
