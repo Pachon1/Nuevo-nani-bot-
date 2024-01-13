@@ -288,9 +288,9 @@ ${readMore}
 ╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ ∙ ∙ ∙ ∙
  `.trim()
     
-const vi = ['https://telegra.ph/file/d5d633c6b7f4596a93cec.mp4',
-'https://telegra.ph/file/eaa64afc9b417017aac2f.mp4',
-'https://telegra.ph/file/5db6a98e4c03f9d3fe9ce.mp4']
+const vi = ['https://telegra.ph/file/66b5309cd23e8dbc76886.jpg',
+'https://telegra.ph/file/66b5309cd23e8dbc76886.jpg',
+'https://telegra.ph/file/66b5309cd23e8dbc76886.jpg']
 
 try {
 await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
