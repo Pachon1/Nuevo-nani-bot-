@@ -166,7 +166,6 @@ global.welgata = [ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb]
 global.gataMenu = [img, img2, img6, img7, img8, img9, img13, img14, img15, img17, img18, img19, img20, img21]
 global.gataMenu2 = [imagen14]
 global.gatadonar = [imagen15]
-global.photoimg = [imagen19, imagen20]
 global.gatahot = [imagen16, imagen17, imagen18]
 global.gataImg = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10, imagen11, imagen12, imagen13]
 
