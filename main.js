@@ -1,4 +1,4 @@
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1' 
 import './config.js'
 import {createRequire} from 'module'
 import path, {join} from 'path'
@@ -91,7 +91,7 @@ global.chatgpt.chain = lodash.chain(global.chatgpt.data)
 }
 loadChatgptDB()
 
-global.authFile = `PolvoraBotSession`;
+global.authFile = `GataBotSession`;
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.authFile)
 const msgRetryCounterMap = (MessageRetryMap) => { }
 const {version} = await fetchLatestBaileysVersion()
@@ -117,12 +117,12 @@ auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})),
 },
-browser: ['PolvoraBot-MD','Edge','2.0.0'],
+browser: ['GataBotLite-MD','Edge','2.0.0'],
 version,
 defaultQueryTimeoutMs: undefined,
 }
  
-const supportedLanguages = ['es', 'en', 'pt', 'ar', 'id']
+/*const supportedLanguages = ['es', 'en', 'pt', 'ar', 'id']
 const configPath = path.join(__dirname, 'config.js')
 let configContent = fs.readFileSync(configPath, 'utf8')
 if (!global.languageLen) {
@@ -147,7 +147,7 @@ console.log(`
 ⬇️  ⬇️  ⬇️`.trim())
 const options = ['es', 'en', 'pt', 'ar', 'id', 'Omitir / Skip']
 const formattedOptions = options.map(option => chalk.bold.blueBright(option))
-const selectedOptionIndex = readlineSync.keyInSelect(formattedOptions, `${chalk.bold.magentaBright('Write the number of the option.\nEscriba el número de la opción.')} `, { cancel: false })
+const selectedOptionIndex = readlineSync.keyInSelect(formattedOptions, `${chalk.bold.magentaBright('Write the number of the option.\nEscriba el número de la opción.\n--->')} `, { cancel: false })
 if (selectedOptionIndex >= 0 && selectedOptionIndex <= 4) {
 const selectedLanguage = supportedLanguages[selectedOptionIndex]
 configContent = configContent.replace('global.languageLen = ""', 'global.languageLen = true')
@@ -163,68 +163,7 @@ console.log(chalk.bold.cyanBright(`🆗 Omitiendo la configuración del idioma.\
 console.log(chalk.bold.redBright(`\n❌ Invalid option. Remember to write only the number of the option.`))
 console.log(chalk.bold.redBright(`❌ Opción no válida. Recuerde escribir sólo el número de la opción.\n`))
 process.send('reset')
-}}
-
-/*const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
-async function main() {
-if (registerNumber === "" || registerNumber === null || registerNumber === false) {
-setTimeout(() => {
-if (registerNumber === "") {
-configContent = configContent.replace('global.registerNumber = ""', 'global.registerNumber = true')
-fs.writeFileSync(configPath, configContent, 'utf8')
-console.log('\nTiempo agotado o se ha omitido la adición de número/s como propietario/s.')
-rl.close()
-}}, 60000)
-// } else {
-//console.log('\nEl registro de número ya se ha realizado o se ha omitido previamente.')
-//   rl.close();
-// }}
-console.log('Escriba el número que será propietario, ejemplo: +593 99 000 0000')
-console.log('Si piensa agregar varios números separados por ",", ejemplo: +593 99 000 0000, +52 1 000 000 0000, +598 00 000 000')
-const phoneNumberInput = await questionAsync('Si desea omitir, escriba "0": ')
-if (phoneNumberInput !== '0' && phoneNumberInput !== '"0"' && phoneNumberInput !== '') {
-const cleanedNumbers = phoneNumberInput.split(',').map(number => number.replace(/[\s+\-()]/g, '').trim())
-const newNumbersArray = cleanedNumbers.map(number => cleanedNumbers.length === 1 ? `'${number}'` : `['${number}']`).join(', ')
-const regex = /(global\.owner\s*=\s*\[\s*[\s\S]*?\s*\])\s*\]/
-configContent = configContent.replace(regex, cleanedNumbers.length === 1 ? `$1, [${newNumbersArray}]]` : `$1, ${newNumbersArray}]`)
-configContent = configContent.replace('global.registerNumber = ""', 'global.registerNumber = true')
-fs.writeFileSync(configPath, configContent, 'utf8')
-if (cleanedNumbers.length === 1) {
-console.log(`\nSe ha agregado el número "+${cleanedNumbers[0]}" como propietario.`)
-} else {
-console.log(`\nSe han agregado los números "+${cleanedNumbers.join(', ')}" como propietarios.`)
-}} else {
-configContent = configContent.replace('global.registerNumber = ""', 'global.registerNumber = true')
-fs.writeFileSync(configPath, configContent, 'utf8')
-console.log('\nSe ha omitido la adición de número/s como propietario/s.')
-}} else {
-console.log('\nEl registro de número ya se ha realizado o se ha omitido previamente.')
-rl.close()
-}}
-function questionAsync(question) {
-return new Promise(resolve => {
-rl.question(question, answer => {
-resolve(answer);
-})
-})}
-main()*/
-
-/*console.log('Escriba el número que será propietario, ejemplo: +593 99 000 0000')
-console.log('Si piensa agregar varios números separé por "," ejemplo: +593 99 000 0000, +52 1 000 000 0000, +598 00 000 000')
-const phoneNumberInput = readlineSync.question('Si desea omitir, escriba "0": ')
-if (phoneNumberInput !== '0' && phoneNumberInput !== '"0"') {
-const cleanedNumbers = phoneNumberInput.split(',').map(number => number.replace(/[\s+\-()]/g, '').trim())
-const newNumbersArray = cleanedNumbers.map(number => cleanedNumbers.length === 1 ? `'${number}'` : `['${number}']`).join(', ')
-const regex = /(global\.owner\s*=\s*\[\s*[\s\S]*?\s*\])\s*\]/
-const newConfigContent = configContent.replace(regex, cleanedNumbers.length === 1 ? `$1, [${newNumbersArray}]]` : `$1, ${newNumbersArray}]`)
-fs.writeFileSync(configPath, newConfigContent, 'utf8')
-if (cleanedNumbers.length === 1) {
-console.log(`\nSe ha agregado el número "+${cleanedNumbers[0]}" como propietario.`)
-} else {
-console.log(`\nSe han agregado los números "+${cleanedNumbers.join(', ')}" como propietarios.`)
-}} else {
-console.log('\nSe ha omitido la adición de número/s como propietario/s.')
-}*/
+}}*/
 
 global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
@@ -402,13 +341,13 @@ unlinkSync(filePath)})
 
 function purgeSession() {
 let prekey = []
-let directorio = readdirSync("./PolvoraBotSession")
+let directorio = readdirSync("./GataBotSession")
 let filesFolderPreKeys = directorio.filter(file => {
-return file.startsWith('pre-key-') || file.startsWith('session-') || file.startsWith('sender-') || file.startsWith('app-')
+return file.startsWith('pre-key-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./PolvoraBotSession/${files}`)
+unlinkSync(`./GataBotSession/${files}`)
 })
 } 
 
@@ -419,7 +358,7 @@ let SBprekey = [];
 listaDirectorios.forEach(directorio => {
 if (statSync(`./GataJadiBot/${directorio}`).isDirectory()) {
 const DSBPreKeys = readdirSync(`./GataJadiBot/${directorio}`).filter(fileInDir => {
-return fileInDir.startsWith('pre-key-') || fileInDir.startsWith('app-') || fileInDir.startsWith('session-')
+return fileInDir.startsWith('pre-key-')
 })
 SBprekey = [...SBprekey, ...DSBPreKeys];
 DSBPreKeys.forEach(fileInDir => {
@@ -436,7 +375,7 @@ console.log(chalk.bold.red(lenguajeGB.smspurgeSessionSB3() + err))
 }}
 
 function purgeOldFiles() {
-const directories = ['./PolvoraBotSession/', './GataJadiBot/']
+const directories = ['./GataBotSession/', './GataJadiBot/']
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
 if (err) throw err
