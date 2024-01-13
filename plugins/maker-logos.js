@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 import FormData from "form-data";
 const split = '|';
 const handler = async (m, {conn, args: [effect], text: txt, usedPrefix, command, name}) => {
-  if (!effect) throw '*[❗] ¿𝘾𝙊𝙈𝙊 𝙐𝙎𝘼𝙍 𝙀𝙎𝙏𝙀 𝘾𝙊𝙈𝘼𝙉𝘿𝙊?*\n_.logo (efecto) (texto)_\n*EJEMPLO:*\n_.logo 3d-deep-sea-metal Polvora_\n\n*[❗] 𝘾𝙐𝘼𝙉𝘿𝙊 𝙇𝙀𝙎 𝘿𝙄𝙂𝘼 𝙌𝙐𝙀 𝙃𝘼𝘾𝙀 𝙁𝘼𝙇𝙏𝘼 𝙐𝙉 𝙏𝙀𝙓𝙏𝙊, 𝙀𝙇 𝙐𝙎𝙊 𝙎𝙀𝙍𝙄𝘼:*\n_.logo (efecto) (texto1|texto2)_\n*EJEMPLO:*\n_.logo Wolf-Logo-Galaxy Polvora|Bot_\n\n*<𝑳𝑰𝑺𝑻𝑨 𝑫𝑬 𝑬𝑭𝑬𝑪𝑻𝑶𝑺/>*\n\n° 🔰 .logo ' + effects.map((v) => v.title).join('\n° 🔰 .logo ');
+  if (!effect) throw '*[❗] ¿𝘾𝙊𝙈𝙊 𝙐𝙎𝘼𝙍 𝙀𝙎𝙏𝙀 𝘾𝙊𝙈𝘼𝙉𝘿𝙊?*\n_.logo (efecto) (texto)_\n*EJEMPLO:*\n_.logo 3d-deep-sea-metal NaniBot_\n\n*[❗] 𝘾𝙐𝘼𝙉𝘿𝙊 𝙇𝙀𝙎 𝘿𝙄𝙂𝘼 𝙌𝙐𝙀 𝙃𝘼𝘾𝙀 𝙁𝘼𝙇𝙏𝘼 𝙐𝙉 𝙏𝙀𝙓𝙏𝙊, 𝙀𝙇 𝙐𝙎𝙊 𝙎𝙀𝙍𝙄𝘼:*\n_.logo (efecto) (texto1|texto2)_\n*EJEMPLO:*\n_.logo Wolf-Logo-Galaxy Polvora|Bot_\n\n*<𝑳𝑰𝑺𝑻𝑨 𝑫𝑬 𝑬𝑭𝑬𝑪𝑻𝑶𝑺/>*\n\n° 🔰 .logo ' + effects.map((v) => v.title).join('\n° 🔰 .logo ');
   if (!effects.find((v) => (new RegExp(v.title, 'gi')).test(effect))) throw `*[❗] 𝙴𝙻 𝙴𝙵𝙴𝙲𝚃𝙾 ${effect} 𝙽𝙾 𝙴𝚂𝚃𝙰 𝙴𝙽 𝙻𝙰 𝙻𝙸𝚂𝚃𝙰 𝙳𝙴 𝙴𝙵𝙴𝙲𝚃𝙾𝚂*`;  
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart();
   if (text.includes(split)) {
