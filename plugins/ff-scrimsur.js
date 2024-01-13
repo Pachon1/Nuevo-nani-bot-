@@ -28,7 +28,7 @@ if (!args[0]) throw `
 │🥷🏻 ➤  
 │🥷🏻 ➤
 ╰─────────────╯
-                 𝘗𝘰𝘭𝘷𝘰𝘳𝘪𝘯𝘉𝘰𝘵
+            
 ` 
 if (!args[0].match(/www.facebook.com|fb.watch/g)) throw `[❗ 𝐈𝐍𝐅𝐎 ❗]`
 try {
