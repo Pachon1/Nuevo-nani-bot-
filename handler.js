@@ -440,7 +440,7 @@ if (settingsREAD.autoread2) await this.readMessages([m.key])
 if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 	    
 if (!db.data.chats[m.chat].reaction && m.isGroup) return
-if (!m.fromMem && m.text.match(/(polvora|pvp|pro|bot)/gi)) {
+if (!m.fromMem && m.text.match(/(pvp|pro|bot)/gi)) {
 let emot = pickRandom(["😆", "😄", "🐥", "🤤", "😈", "😧", "😱", "🥹", "🤥", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🥸", "🥺", "😛", "🤡", "🤌", "⭐", "🙉", "🙈", "🌝", "🌛", "🌜", "👀", "👅", "🎈", "🪄", "❤️", "🫡", "💛", "💤", "🫦", "🧸", "🥱", "🥶", "👽", "🌚", "🐸", "😩", "😎", "🔥", "😵", "🙃"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
@@ -570,7 +570,7 @@ unreg: lenguajeGB['smsUnreg'](),
 restrict: lenguajeGB['smsRestrict'](),
 }[type]
 let tg = { quoted: m, userJid: conn.user.jid }
-let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, '👌 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 👌', '🌟 @POLVORA BOT PRO'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, yt, nna, nn, nnn, ig, paypal, fb].getRandom() }}}}, tg)
+let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, '👌 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 👌', '🌟 NANI BOT MAX'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, yt, nna, nn, nnn, ig, paypal, fb].getRandom() }}}}, tg)
 if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
 }
 
