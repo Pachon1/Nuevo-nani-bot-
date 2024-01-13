@@ -167,7 +167,6 @@ global.img21 = 'https://i.imgur.com/qwU7siL.png'
 global.img21 = 'https://i.imgur.com/YfK3oTD.jpg' //paypal
 
 global.welgata = [ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb]
-global.redesMenu = [n2, nna, nn, nnn, nnnt, nnntt, nnnttt, nnnttt1, nnnttt2, nnnttt3, nnnttt4, md, ig, paypal, yt, asistencia, fb]
 global.gataMenu = [img, img2, img6, img7, img8, img9, img13, img14, img15, img17, img18, img19, img20, img21]
 global.gataMenu2 = [imagen14]
 global.gatadonar = [imagen15]
