@@ -48,13 +48,13 @@ return [getRandomColor(), getRandomColor()];
 cfonts.say('gatabot\nlite\nmd'.trim(), options)
 
 } catch (err) {
-say('GataBot\nLite\nMD', {
+say('NaniBot\nMax', {
  font: 'chrome',
  align: 'center',
  gradient: ['red', 'magenta']
 })}
 
-say(`Project Author:\nGataNina-Li (@gata_dios)\n\nDevelopers:\nelrebelde21 (Mario)\nAzamiJs (Azami)\nKatashiFukushima (Katashi)`.trim(), {
+say(`Project Author:\nJeffo (@jeffomx15)\n\nColaborador:\EliteBotGlobal`.trim(), {
  font: 'console',
  align: 'center',
  colors: ['candy']
