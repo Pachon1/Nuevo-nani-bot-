@@ -303,7 +303,7 @@ ${readMore}
 
  `.trim()
     
-const img = ['https://telegra.ph/file/8d3a421117936bc6e9fb1.png']
+const img = ['']
 
 try {
 await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
