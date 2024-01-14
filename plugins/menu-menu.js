@@ -303,7 +303,7 @@ ${readMore}
 
  `.trim()
     
-const img = ['']
+const vi = ['https://telegra.ph/file/9834bfc30d4d3c1e8d7d6.mp4']
 
 try {
 await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
@@ -325,7 +325,7 @@ await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() 
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)}}
 
-handler.command = /^(men)$/i
+handler.command = /^(menu)$/i
 handler.register = false
 handler.group = true
 export default handler
