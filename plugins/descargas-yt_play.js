@@ -140,7 +140,7 @@ handler.limit = 0
 }}
 handler.command = ['play', 'play2']
 handler.exp = 0
-handler.register = true
+handler.register = false
 export default handler
 
 async function search(query, options = {}) {
