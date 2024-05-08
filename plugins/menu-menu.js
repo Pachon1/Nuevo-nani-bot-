@@ -29,7 +29,7 @@ lugarFecha.locale('es', formatoFecha)
 const horarioFecha = lugarFecha.format('dddd,DD [de] MMMM [del] YYYY│[Hora:]HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
 
 let menu = `
-╭─𝙉𝘼𝙉𝙄 𝘽𝙊𝙏 𝙈𝘼𝙓─✧
+╭─😈𝐙𝐞𝐥𝐢𝐤𝐚 𝐁𝐨𝐭😈─✧
 ┊⭓ 𝘏𝘰𝘭𝘢 ➺ @${m.sender.split("@")[0]}
 ┊⭓ 𝘧𝘦𝘤𝘩𝘢 : ${week}, ${date} 
 ┊⭓ 𝘵𝘪𝘦𝘮𝘱𝘰 𝘢𝘤𝘵𝘪𝘷𝘰 : ${uptime}
